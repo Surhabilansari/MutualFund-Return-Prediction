@@ -1,0 +1,113 @@
+/* Base Styling */
+body {
+    background: whitesmoke;
+    font-family: 'Poppins', sans-serif;
+    color: green;
+    text-align: center;
+    padding: 30px;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+/* Form Container */
+form {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    padding: 25px;
+    width: 100%;
+    max-width: 480px;
+    margin: auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Inputs, Dropdowns & Buttons – SAME SIZE */
+input,
+select,
+button {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+/* Placeholder Color Added Here */
+input::placeholder,
+select::placeholder {
+    color: black;
+}
+
+input:focus,
+select:focus {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Button */
+button {
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+
+/* Tablet Screens */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    form {
+        width: 95%;
+        padding: 20px;
+    }
+
+    input,
+    select,
+    button {
+        width: 100%;
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+/* Mobile Screens (≤480px) */
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    form {
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    input,
+    select,
+    button {
+        font-size: 13px;
+        padding: 9px;
+    }
+}

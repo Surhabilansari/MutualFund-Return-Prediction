@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mutual Fund Return Predictor</title>
+
+    <!-- Responsive View -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Link External CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <h1>💹 Mutual Fund Return Prediction</h1>
+
+    <form action="/predict" method="POST">
+        <input type="number" name="min_sip" placeholder="Minimum SIP Amount" required>
+        <input type="number" name="min_lumpsum" placeholder="Minimum Lumpsum Amount" required>
+        <input type="number" name="expense_ratio" placeholder="Expense Ratio (%)" step="0.01" required>
+        <input type="number" name="fund_size_cr" placeholder="Fund Size (Cr)" required>
+        <input type="number" name="fund_age_yr" placeholder="Fund Age (Years)" required>
+        <input type="number" name="sortino" placeholder="Sortino Ratio" step="0.01" required>
+        <input type="number" name="alpha" placeholder="Alpha" step="0.01" required>
+        <input type="number" name="sd" placeholder="Standard Deviation (SD)" step="0.01" required>
+        <input type="number" name="beta" placeholder="Beta" step="0.01" required>
+        <input type="number" name="sharpe" placeholder="Sharpe Ratio" step="0.01" required>
+
+        <select name="risk_level" required>
+            <option value="">Select Risk Level</option>
+            <option value="1">Low</option>
+            <option value="2">Moderate</option>
+            <option value="3">High</option>
+        </select>
+
+        <select name="rating" required>
+            <option value="">Select Rating</option>
+            <option value="1">⭐</option>
+            <option value="2">⭐⭐</option>
+            <option value="3">⭐⭐⭐</option>
+            <option value="4">⭐⭐⭐⭐</option>
+            <option value="5">⭐⭐⭐⭐⭐</option>
+        </select>
+
+        <input type="number" name="volatility_index" placeholder="Volatility Index" step="0.01" required>
+        <input type="number" name="age_efficiency" placeholder="Age Efficiency" step="0.01" required>
+
+        <button type="submit"> Predict Return</button>
+    </form>
+</body>
+
+</html>
