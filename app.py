@@ -5,9 +5,9 @@ import sys
 from MutualFund.exception import MutualFundException
 
 
-# -------------------------------
 # CLASS 1: Model Handler
-# -------------------------------
+
+
 class MutualFundModel:
     def __init__(self, model_path, scaler_path):
         try:
@@ -39,9 +39,9 @@ class MutualFundModel:
             raise MutualFundException(e, sys)
 
 
-# -------------------------------
 # CLASS 2: Flask Application
-# -------------------------------
+
+
 class MutualFundApp:
     def __init__(self):
         try:
@@ -95,12 +95,11 @@ class MutualFundApp:
             raise MutualFundException(e, sys)
 
 
-# -------------------------------
-# MAIN DRIVER
-# -------------------------------
+mf = MutualFundApp()
+app = mf.app
+
 if __name__ == "__main__":
     try:
-        app = MutualFundApp()
-        app.run()
+        mf.run()
     except Exception as e:
         raise MutualFundException(e, sys)
